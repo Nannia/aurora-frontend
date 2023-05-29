@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
 
 export default function OrganizationProfile() {
 
+    // console.log('some log!')
+
     const token = localStorage.getItem('token');
 
     const [orgData,setOrgData] = useState('');
