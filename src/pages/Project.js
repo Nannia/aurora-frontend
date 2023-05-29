@@ -16,7 +16,7 @@ export default function Project() {
         headers: { Authorization: `Bearer ${token}` },
       };
 
-    axios.get('http://localhost:8081/api/v1/getProject',config)
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getProject',config)
     .then(response => {
         console.log('project data:',response.data);
         setProject(response.data);
@@ -25,7 +25,7 @@ export default function Project() {
         console.error('Error fetching project data', error);
     });  
       
-  axios.get('http://localhost:8081/api/v1/getUser', config)
+  axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
       .then(response => {
         console.log('Profile data:', response.data);
         setUserData(response.data);

@@ -27,7 +27,7 @@ export default function Registration() {
 
     {
 
-      await axios.post("http://localhost:8081/api/v1/auth/register",
+      await axios.post("https://volunteer-site.herokuapp.com/api/v1/auth/register",
 
           {
 
@@ -78,7 +78,7 @@ export default function Registration() {
     try
     {
 
-      await axios.post("http://localhost:8081/api/v1/auth/registerOrg",
+      await axios.post("https://volunteer-site.herokuapp.com/api/v1/auth/registerOrg",
 
           {
             organizationName: orgname,

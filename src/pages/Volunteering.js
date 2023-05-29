@@ -55,7 +55,7 @@ export default function Volunteering() {
   const [volByName, setVolByName] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8081/api/v1/showAllUsers')
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllUsers')
         .then(response => {
           console.log('Posts data:', response.data);
           setUsers(response.data);
@@ -70,7 +70,7 @@ export default function Volunteering() {
     document.getElementById("show-orgs").style.display = "none";
     document.getElementById("show-org-by-id").style.display = "block";
     const lastname = document.getElementById('search-input').value;///osp
-    axios.get(`http://localhost:8081/api/v1/getUserByLastname/${lastname}`)
+    axios.get(`https://volunteer-site.herokuapp.com/api/v1/getUserByLastname/${lastname}`)
         .then(response => {
           console.log('Response:', response.data);
           setVolByName(response.data);

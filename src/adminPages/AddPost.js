@@ -28,7 +28,7 @@ export default function AddPost() {
         };
 
         try {
-            await axios.post("http://localhost:8081/api/v1/addPost",
+            await axios.post("https://volunteer-site.herokuapp.com/api/v1/addPost",
                 {
                     title: title,
                     description: description,
@@ -60,7 +60,7 @@ export default function AddPost() {
             headers: { Authorization: `Bearer ${token}`
             }
         };
-      axios.get('http://localhost:8081/api/v1/getUser', config)
+      axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
           .then((response) => {
             console.log('data', response.data);
             if (response.data.role === 'ADMIN') {

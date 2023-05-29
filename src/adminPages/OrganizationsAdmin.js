@@ -43,7 +43,7 @@ export default function Organizations() {
 
 
     const deleteOrg = async (id) => {
-        await axios.delete('http://localhost:8081/api/v1/deleteOrg/' + id,config);
+        await axios.delete('https://volunteer-site.herokuapp.com/api/v1/deleteOrg/' + id,config);
     }
   //
   // useEffect(() => {
@@ -59,10 +59,10 @@ export default function Organizations() {
   //
 
   useEffect(() => {
-    axios.get('http://localhost:8081/api/v1/getUser', config)
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
         .then((response) => {
           if (response.data.role === 'ADMIN') {
-            axios.get('http://localhost:8081/api/v1/showAllOrgs')
+            axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllOrgs')
                 .then(response => {
                   console.log('Orgs data:', response.data);
                   setOrg(response.data);

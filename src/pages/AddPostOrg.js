@@ -24,7 +24,7 @@ export default function AddPostOrg() {
     };
 
     if(config != null){
-      axios.get('http://localhost:8081/api/v1/getOrganization', config)
+      axios.get('https://volunteer-site.herokuapp.com/api/v1/getOrganization', config)
           .then(response => {
             if(response.data.role === 'ORGANIZATION') {
               setOrgData(response.data);
@@ -45,7 +45,7 @@ export default function AddPostOrg() {
     };
 
     try {
-      await axios.post("http://localhost:8081/api/v1/addPost",
+      await axios.post("https://volunteer-site.herokuapp.com/api/v1/addPost",
           {
             title: title,
             description: description,

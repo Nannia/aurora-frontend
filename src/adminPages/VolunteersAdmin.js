@@ -24,7 +24,7 @@ export default function Volunteers() {
         }
     }
   const deleteUser = async (id) => {
-      await axios.delete('http://localhost:8081/api/v1/deleteUser/' + id,config);
+      await axios.delete('https://volunteer-site.herokuapp.com/api/v1/deleteUser/' + id,config);
   }
 
     function User(props) {
@@ -59,7 +59,7 @@ export default function Volunteers() {
 
 
     useEffect(() => {
-    axios.get('http://localhost:8081/api/v1/showAllUsers')
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllUsers')
         .then(response => {
           console.log('Posts data:', response.data);
           setUsers(response.data);
@@ -74,7 +74,7 @@ export default function Volunteers() {
           headers: { Authorization: `Bearer ${token}`
           }
       };
-    axios.get('http://localhost:8081/api/v1/getUser', config)
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
         .then((response) => {
           console.log('data', response.data);
           if (response.data.role === 'ADMIN') {

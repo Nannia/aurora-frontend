@@ -20,7 +20,7 @@ export default function OrganizationProfile() {
         };
 
         if(config != null){
-            axios.get('http://localhost:8081/api/v1/getOrganization', config)
+            axios.get('https://volunteer-site.herokuapp.com/api/v1/getOrganization', config)
                 .then(response => {
                     if(response.data.role === 'ORGANIZATION') {
                         setOrgData(response.data);
@@ -40,7 +40,7 @@ export default function OrganizationProfile() {
         };
         try {
             await axios.put(
-                "http://localhost:8081/api/v1/aboutMeOrg",
+                "https://volunteer-site.herokuapp.com/api/v1/aboutMeOrg",
                 { about: about },
                 config
             );

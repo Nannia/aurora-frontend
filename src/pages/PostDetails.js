@@ -12,7 +12,7 @@ export default function PostDetails() {
     useEffect(() => {
         if (postId) {
             axios
-                .get(`http://localhost:8081/api/v1/findPostBy/${postId}`)
+                .get(`https://volunteer-site.herokuapp.com/api/v1/findPostBy/${postId}`)
                 .then(response => {
                     console.log('Post data:', response.data);
                     setPost(response.data);

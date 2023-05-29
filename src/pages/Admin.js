@@ -11,7 +11,7 @@ export default function Admin() {
     headers: {Authorization: `Bearer ${token}`},
     };
 
-    axios.get('http://localhost:8081/api/v1/getUser', config).then((response) => {
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config).then((response) => {
        console.log('data', response.data);
        if(response.data.role === 'ADMIN')
        {

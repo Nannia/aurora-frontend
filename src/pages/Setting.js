@@ -31,7 +31,7 @@ export default function Setting() {
     event.preventDefault();
     try
     {
-      await axios.put("http://localhost:8081/api/v1/aboutMe",
+      await axios.put("https://volunteer-site.herokuapp.com/api/v1/aboutMe",
 
           {
           // dayOfBirth: dayOfBirth,
@@ -91,7 +91,7 @@ export default function Setting() {
 
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/v1/getUser', config).then((response) => {
+        axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config).then((response) => {
             console.log('User Data',response.data);
             setUserData(response.data);
         }).catch((error) => {

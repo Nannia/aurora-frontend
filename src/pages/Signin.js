@@ -12,7 +12,7 @@ export default function Signin() {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:8081/api/v1/auth/authenticate', {
+            const response = await axios.post('https://volunteer-site.herokuapp.com/api/v1/auth/authenticate', {
                 email,
                 password
             });
@@ -26,7 +26,7 @@ export default function Signin() {
 
     const handleLoginOrg = async () => {
         try {
-            const response = await axios.post('http://localhost:8081/api/v1/auth/authenticateOrg', {
+            const response = await axios.post('https://volunteer-site.herokuapp.com/api/v1/auth/authenticateOrg', {
                 email,
                 password
             });

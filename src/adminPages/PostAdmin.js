@@ -40,11 +40,11 @@ export default function PostAdmin() {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:8081/api/v1/getUser', config)
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
         .then((response) => {
           console.log('user data', response.data);
           if (response.data.role === 'ADMIN') {
-            axios.get('http://localhost:8081/api/v1/getAllPosts', config)
+            axios.get('https://volunteer-site.herokuapp.com/api/v1/getAllPosts', config)
                 .then((response) => {
                   setPosts(response.data);
                 })

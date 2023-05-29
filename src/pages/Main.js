@@ -54,7 +54,7 @@ export default function Main() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/v1/showAllPosts')
+        axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllPosts')
             .then(response => {
                 console.log('Posts data:', response.data);
                 setPosts(response.data);
@@ -64,7 +64,7 @@ export default function Main() {
             });
     }, []);
 
-    axios.get('http://localhost:8081/api/v1/getUser',config).then((response) =>{
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser',config).then((response) =>{
         console.log('data cheak',response.data);
         if(response.data.role === 'ADMIN')
         {

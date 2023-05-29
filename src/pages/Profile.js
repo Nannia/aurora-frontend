@@ -16,7 +16,7 @@ export default function Profile() {
     };
 
     if(config != null){
-      axios.get('http://localhost:8081/api/v1/getUser', config)
+      axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
           .then(response => {
             setUserData(response.data);
           })

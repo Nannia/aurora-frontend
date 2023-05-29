@@ -36,7 +36,7 @@ export default function Organization() {
   const [orgbyactiv,setOrgsByActiv] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8081/api/v1/showAllOrgs')
+    axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllOrgs')
         .then(response => {
           console.log(response.data);
           setOrgs(response.data);
@@ -52,7 +52,7 @@ export default function Organization() {
     document.getElementById("show-org-by-id").style.display = "block";
     document.getElementById("show-org-by-activity").style.display = "none";
     const id = document.getElementById('search-input').value;
-    axios.get(`http://localhost:8081/api/v1/findOrgById/${id}`)
+    axios.get(`https://volunteer-site.herokuapp.com/api/v1/findOrgById/${id}`)
         .then(response => {
           console.log('Response:', response.data);
           setOrgsByID(response.data);
@@ -74,7 +74,7 @@ export default function Organization() {
         document.getElementById("show-org-by-id").style.display = "none";
         const active = document.getElementById('FromOrg').value;
 
-        axios.get('http://localhost:8081/api/v1/showAllOrgs')
+        axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllOrgs')
             .then(response => {
                 console.log(response.data);
                 const orgsWithActivity = response.data.filter(org => org.activity === active);

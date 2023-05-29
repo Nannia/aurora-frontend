@@ -36,7 +36,7 @@ export default function News() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/v1/showAllPosts')
+        axios.get('https://volunteer-site.herokuapp.com/api/v1/showAllPosts')
             .then(response => {
                 console.log('Posts data:', response.data);
                 setPosts(response.data);

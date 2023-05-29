@@ -16,7 +16,7 @@ export default function Navbar() {
             headers: {Authorization: `Bearer ${token}`},
         };
     if(config != null) {
-        axios.get('http://localhost:8081/api/v1/getUser', config)
+        axios.get('https://volunteer-site.herokuapp.com/api/v1/getUser', config)
             .then(response => {
                 console.log('User data', response.data);
                 if (response.data.role === 'USER') {
@@ -119,7 +119,7 @@ export default function Navbar() {
                 }
             })
             .catch(() => {
-                axios.get('http://localhost:8081/api/v1/getOrganization', config)
+                axios.get('https://volunteer-site.herokuapp.com/api/v1/getOrganization', config)
                     .then((response) => {
                         console.log('Org data', response.data);
                         if (response.data.role == 'ORGANIZATION') {
